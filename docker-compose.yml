@@ -9,6 +9,7 @@ services:
       - MYSQL_DATABASE=CICDPro
       - MYSQL_USER=CICDUs
       - MYSQL_PASSWORD=CICDPRO123
+      
   flask:
     build: 
       context: ".\\flask"
