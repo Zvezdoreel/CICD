@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  mysql:
+    image: "mysql:latest"
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=CICDPro123!@#
+      - MYSQL_DATABASE=CICDPro
+      - MYSQL_USER=CICDUs
+      - MYSQL_PASSWORD=CICDPRO123
+  flask:
+    build: 
+      context: ".\\flask"
+      dockerfile: FlaskDOckerFile.dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    command: sh -c "./wait && python3 test.py"
+    environment:
+      - WAIT_HOSTS=mysql:3306
+      - WAIT_HOSTS_TIMEOUT=3000
+      - WAIT_SLEEP_INTERVAL=3
+      - WAIT_HOST_CONNECT_TIMEOUT=300

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript + DOM</title>
+	<link rel="stylesheet" type="text/css" href='static\css\style_JSTest.css'>
+</head>
+<body id="gradient">
+	<header>
+		<h1><strong>Welcome to my ci/cd project</strong></h1>
+		<h2 id="first">save some values in the mysql server</h2>
+	</header>
+	<input type="text" id="user input" name="enter items">
+	<button class="enter" id="enter">Post to mysql!</button>
+	<ul></ul>
+	<footer>
+		<br>
+		<hr>
+		<br>
+		<input type="color" class="color1" value="#00ff00">
+		<input type="color" class="color2" value="#f0f0f0">
+		<h2>current css background</h2>
+		<h3>linear-gradient(to right, rgb(0, 255, 0), rgb(240, 240, 240));</h3>
+	</footer>
+<!--	<script type="text/javascript" src="static\js\gradient.js"></script>-->
+<!--	<script type="text/javascript" src="static\js\addToList.js"></script>-->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/gradient.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/addToList.js') }}"></script>
+</body>
+</html>
